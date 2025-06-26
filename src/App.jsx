@@ -26,6 +26,7 @@ const App = () => {
   }, [searchTerm, sortBy, books]);
 
   const toggleFavorite = (bookId) => {
+    console.log("toggling favorite:", bookId);
     const newFavorites = new Set(favorites);
     if (newFavorites.has(bookId)) {
       newFavorites.delete(bookId);
@@ -76,7 +77,7 @@ const App = () => {
             />
           ))}
         </div>
-
+        {/* not found bolsa */}
         {filteredBooks.length === 0 && (
           <div className="text-center py-12">
             <span className="text-6xl text-gray-300 block mb-4">📚</span>
