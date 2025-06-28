@@ -1,6 +1,8 @@
+// components/BookCard.jsx
 import React from "react";
-import { getRatingData } from "../../utils/helpers";
+import { getRatingData } from "../../utils/helpers.js";
 
+// рендер звездочек
 const renderStars = (rating) => {
   const { fullStars, hasHalfStar, emptyStars } = getRatingData(rating);
   const stars = [];
@@ -32,20 +34,30 @@ const renderStars = (rating) => {
   return stars;
 };
 
-const BookCard = ({ book, favorites, toggleFavorite, onBookClick }) => {
+const BookCard = ({
+  book,
+  favorites,
+  toggleFavorite,
+  onBookClick,
+  onDeleteBook,
+}) => {
+  const isFavorite = favorites.has(book.id);
+
   return (
-    <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
+    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden group">
       <div className="relative">
         <img
           src={book.cover}
           alt={book.title}
           className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
         />
+
+        {/* кнопка избранного */}
         <div className="absolute top-3 right-3">
           <button
             onClick={() => toggleFavorite(book.id)}
-            className={`w-12 h-12 rounded-full transition-colors ${
-              favorites.has(book.id)
+            className={`p-2 rounded-full transition-colors ${
+              isFavorite
                 ? "bg-red-500 text-white"
                 : "bg-white/80 text-gray-600 hover:bg-red-50 hover:text-red-500"
             }`}
@@ -53,20 +65,17 @@ const BookCard = ({ book, favorites, toggleFavorite, onBookClick }) => {
             <span>♥</span>
           </button>
         </div>
+
+        {/* цена */}
         <div className="absolute bottom-3 left-3">
-          {book.isFree ? (
-            <span className="px-3 py-1 bg-green-500 text-white text-sm font-medium rounded-full">
-              Bepul
-            </span>
-          ) : (
-            <span className="px-3 py-1 bg-red-500 text-white text-sm font-medium rounded-full">
-              Pulli
-            </span>
-          )}
+          <span className="px-3 py-1 bg-green-500 text-white text-sm font-medium rounded-full">
+            {book.price}₽
+          </span>
         </div>
       </div>
 
       <div className="p-5">
+        {/* рейтинг */}
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center space-x-1">
             {renderStars(book.rating)}
@@ -85,17 +94,25 @@ const BookCard = ({ book, favorites, toggleFavorite, onBookClick }) => {
           {book.description}
         </p>
 
-        <button
-          onClick={() => onBookClick(book)}
-          className={`w-full font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2 ${
-            book.isFree
-              ? "bg-green-600 hover:bg-green-700 text-white"
-              : "bg-red-600 hover:bg-red-700 text-white"
-          }`}
-        >
-          <span>📖</span>
-          <span>{book.isFree ? "O'qing" : "Sotib olish"}</span>
-        </button>
+        {/* кнопки */}
+        <div className="space-y-2">
+          {/* кнопка купить */}
+          <button
+            onClick={() => onBookClick(book)}
+            className="w-full font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2 bg-orange-600 hover:bg-orange-700 text-white"
+          >
+            <span>💰</span>
+            <span>Купить</span>
+          </button>
+
+          {/* кнопка удалить */}
+          <button
+            onClick={() => onDeleteBook(book.id)}
+            className="w-full py-2 px-4 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors"
+          >
+            Delete
+          </button>
+        </div>
       </div>
     </div>
   );
