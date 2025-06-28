@@ -1,4 +1,4 @@
-// components/BookCard.jsx
+
 import React from "react";
 import { getRatingData } from "../../utils/helpers.js";
 import { FaBasketShopping } from "react-icons/fa6";

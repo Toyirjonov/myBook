@@ -1,4 +1,4 @@
-// components/BookDetail.jsx
+
 import React from "react";
 import { getRatingData } from "../../utils/helpers.js";
 import Footer from "../Footer/Footer";
