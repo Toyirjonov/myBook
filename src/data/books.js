@@ -22,7 +22,6 @@ import Cover21 from "../asserts/jpg/TheBookThief.jpg";
 import Cover22 from "../asserts/jpg/ATaleofTwoCities.jpg";
 import Cover23 from "../asserts/jpg/LesMiserables.jpg";
 import Cover24 from "../asserts/jpg/TheHungerGames.jpg";
-import Cover25 from "../asserts/jpg/BraveNewWorld.jpg";
 
 export const booksList = [
   {
@@ -34,6 +33,7 @@ export const booksList = [
     description: "A young girl confronts racial injustice in the Deep South.",
     fullDescription:
       "Set in 1930s Alabama, the novel follows Scout Finch and her brother Jem, whose father, Atticus, defends a black man accused of raping a white woman. Through their eyes, we witness racial tensions, moral courage, and compassion in a segregated society.",
+    price: 299,
   },
   {
     id: 2,
@@ -44,6 +44,7 @@ export const booksList = [
     description: "A dystopian vision of a totalitarian future.",
     fullDescription:
       "In a chilling dystopia, Winston Smith struggles under the watchful eye of Big Brother. Employed to alter historical records, he becomes disillusioned with the Party's oppressive control over truth, language, and thought.",
+    price: 399,
   },
   {
     id: 3,
@@ -54,6 +55,7 @@ export const booksList = [
     description: "Epic fantasy quest to destroy the One Ring.",
     fullDescription:
       "Frodo Baggins inherits the powerful and dangerous One Ring. Joined by the Fellowship, he embarks on a perilous journey across Middle-earth to Mount Doom, facing dark forces, corruption, and loyalty tests.",
+    price: 699,
   },
   {
     id: 4,
@@ -64,6 +66,7 @@ export const booksList = [
     description: "A classic romance and social commentary.",
     fullDescription:
       "Elizabeth Bennet navigates love, reputation, and social standing in Georgian England. Her evolving relationship with Mr. Darcy highlights themes of class, misunderstanding, and personal growth.",
+    price: 249,
   },
   {
     id: 5,
@@ -74,6 +77,7 @@ export const booksList = [
     description: "The decadence and disillusionment of the Jazz Age.",
     fullDescription:
       "Nick Carraway narrates his experiences in 1920s New York, especially his encounters with Jay Gatsby, a mysterious millionaire obsessed with rekindling his past love with Daisy Buchanan.",
+    price: 329,
   },
   {
     id: 6,
@@ -84,6 +88,7 @@ export const booksList = [
     description: "The beginning of Harry's magical journey.",
     fullDescription:
       "Harry Potter discovers on his 11th birthday that he is a wizard. He heads to Hogwarts School of Witchcraft and Wizardry, makes loyal friends, learns magic—and faces the dark wizard who killed his parents.",
+    price: 449,
   },
   {
     id: 7,
@@ -94,6 +99,7 @@ export const booksList = [
     description: "Bilbo Baggins' unexpected adventure.",
     fullDescription:
       "Bilbo, a humble hobbit, is swept into a quest to help dwarves reclaim their homeland from the dragon Smaug. Along the way, he encounters trolls, elves, goblins—and finds a mysterious ring.",
+    price: 379,
   },
   {
     id: 8,
@@ -104,6 +110,7 @@ export const booksList = [
     description: "A future where books are burned.",
     fullDescription:
       "In a society where books are outlawed, fireman Guy Montag burns them. Soon he questions his work and the oppressive system, seeking truth and meaning in banned literature.",
+    price: 289,
   },
   {
     id: 9,
@@ -114,6 +121,7 @@ export const booksList = [
     description: "A governess's emotional and moral journey.",
     fullDescription:
       "Raised an orphan, Jane Eyre becomes a governess at Thornfield Hall, where she falls for the enigmatic Mr. Rochester. She must balance her love against her need for independence and self-respect.",
+    price: 279,
   },
   {
     id: 10,
@@ -124,6 +132,7 @@ export const booksList = [
     description: "Political satire in farmyard form.",
     fullDescription:
       "A group of farm animals rebel against human farmers, hoping for equality. But power corrupts, and the pigs who lead become as oppressive as the humans.",
+    price: 199,
   },
   {
     id: 11,
@@ -134,6 +143,7 @@ export const booksList = [
     description: "Teenage angst and alienation.",
     fullDescription:
       "Holden Caulfield recounts a few days in his life, after being expelled from school. Wandering New York City, he struggles with authenticity, phoniness, and the innocence of childhood.",
+    price: 349,
   },
   {
     id: 12,
@@ -144,6 +154,7 @@ export const booksList = [
     description: "Magical adventures in Narnia.",
     fullDescription:
       "Four siblings enter the magical land of Narnia through a wardrobe. They bond with Aslan, fight the White Witch, and experience growth, sacrifice, and redemption across seven books.",
+    price: 599,
   },
   {
     id: 13,
@@ -154,6 +165,7 @@ export const booksList = [
     description: "Captain Ahab's obsession with the white whale.",
     fullDescription:
       "Narrator Ishmael joins the whaling ship Pequod, led by Captain Ahab. Ahab's monomaniacal pursuit of the great white whale Moby Dick leads to tragedy and reflection on fate and obsession.",
+    price: 429,
   },
   {
     id: 14,
@@ -164,6 +176,7 @@ export const booksList = [
     description: "Napoleonic war-era Russian epic.",
     fullDescription:
       "Following aristocratic families during the Napoleonic Wars, Tolstoy explores war, peace, love, and the nature of history, weaving personal stories with grand historical events.",
+    price: 799,
   },
   {
     id: 15,
@@ -174,6 +187,7 @@ export const booksList = [
     description: "A shepherd's journey to find his destiny.",
     fullDescription:
       "Santiago, a young Andalusian shepherd, dreams of treasure in Egypt. Guided by omens and a mysterious alchemist, he pursues his Personal Legend and discovers deeper truths.",
+    price: 259,
   },
   {
     id: 16,
@@ -184,6 +198,7 @@ export const booksList = [
     description: "A poetic tale of love and loss.",
     fullDescription:
       "A pilot stranded in the desert meets a young prince from a tiny asteroid. Through their conversations, they explore innocence, friendship, love, and the follies of adulthood.",
+    price: 229,
   },
   {
     id: 17,
@@ -194,6 +209,7 @@ export const booksList = [
     description: "A moral tale of guilt and redemption.",
     fullDescription:
       "Impoverished student Raskolnikov murders a pawnbroker, believing it could be justified. Tormented by guilt, he spirals into anguish, ultimately seeking redemption.",
+    price: 389,
   },
   {
     id: 18,
@@ -204,6 +220,7 @@ export const booksList = [
     description: "A story of friendship and redemption in Afghanistan.",
     fullDescription:
       "Amir and Hassan grow up in Kabul as childhood friends. After betrayal and guilt, Amir returns to a Taliban-ruled Afghanistan to help Hassan's son and seek forgiveness.",
+    price: 359,
   },
   {
     id: 19,
@@ -214,6 +231,7 @@ export const booksList = [
     description: "A haunting tale of passion and revenge.",
     fullDescription:
       "Heathcliff, a foundling adopted by the Earnshaws, falls deeply in love with Catherine. Their destructive obsession reverberates through generations on the Yorkshire moors.",
+    price: 299,
   },
   {
     id: 20,
@@ -224,6 +242,7 @@ export const booksList = [
     description: "A comical journey of misguided knight-errantry.",
     fullDescription:
       "Alonso Quixano, obsessed with chivalric romances, becomes Don Quixote and sets out with Sancho Panza on a quest to revive knighthood—blurring fantasy and reality.",
+    price: 469,
   },
   {
     id: 21,
@@ -234,6 +253,7 @@ export const booksList = [
     description: "A girl steals books in Nazi Germany.",
     fullDescription:
       "Narrated by Death, the novel chronicles young Liesel Meminger's life in wartime Germany. She steals books, forms bonds, and finds solace amid tragedy.",
+    price: 399,
   },
   {
     id: 22,
@@ -244,6 +264,7 @@ export const booksList = [
     description: "Love and sacrifice during the French Revolution.",
     fullDescription:
       "Set in London and Paris, this novel interweaves the lives of Charles Darnay and Sydney Carton amid the turmoil of revolution and personal redemption.",
+    price: 329,
   },
   {
     id: 23,
@@ -254,6 +275,7 @@ export const booksList = [
     description: "Epic struggle for redemption in 19th‑century France.",
     fullDescription:
       "Ex-convict Jean Valjean seeks a new life but is relentlessly pursued by Inspector Javert. Intertwining tales of love, sacrifice, and justice unfold amid historical unrest.",
+    price: 549,
   },
   {
     id: 24,
@@ -264,15 +286,6 @@ export const booksList = [
     description: "A brutal televised fight to the death.",
     fullDescription:
       "In the dystopian nation of Panem, Katniss Everdeen volunteers for the Hunger Games—a televised survival contest. She challenges tyranny and sparks rebellion.",
-  },
-  {
-    id: 25,
-    title: "Brave New World",
-    author: "Aldous Huxley",
-    rating: 3.99,
-    cover: Cover25,
-    description: "A chilling take on a controlled, pleasure‑seeking society.",
-    fullDescription:
-      "In a technologically advanced future, humans are engineered for predetermined roles, drug‑induced contentment, and societal control. One man's questioning disrupts the status quo.",
+    price: 379,
   },
 ];

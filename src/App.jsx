@@ -1,10 +1,9 @@
-// App.jsx
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
 import BookCard from "./components/BookCard/BookCard";
 import BookDetail from "./components/BookDetail/BookDetail";
 import Footer from "./components/Footer/Footer";
-import { booksList } from "./data/books";
+import { booksList } from "./data/books.js";
 import { filterAndSortBooks } from "./utils/helpers.js";
 
 const App = () => {
@@ -14,10 +13,9 @@ const App = () => {
   const [sortBy, setSortBy] = useState("rating");
   const [selectedBook, setSelectedBook] = useState(null);
   const [favorites, setFavorites] = useState(new Set());
-  const [cart, setCart] = useState(new Map()); // корзина: Map(bookId -> количество)
+  const [cart, setCart] = useState(new Map());
 
   useEffect(() => {
-    // загружаем книги при старте
     setBooks(booksList);
     setFilteredBooks(booksList);
   }, []);
@@ -28,7 +26,7 @@ const App = () => {
   }, [searchTerm, sortBy, books]);
 
   const toggleFavorite = (bookId) => {
-    console.log("toggling favorite:", bookId); // забыл убрать
+    console.log("like:", bookId);
     const newFavorites = new Set(favorites);
     if (newFavorites.has(bookId)) {
       newFavorites.delete(bookId);
@@ -38,7 +36,6 @@ const App = () => {
     setFavorites(newFavorites);
   };
 
-  // функции для корзины
   const addToCart = (bookId) => {
     const newCart = new Map(cart);
     const currentCount = newCart.get(bookId) || 0;
@@ -57,16 +54,13 @@ const App = () => {
     setCart(newCart);
   };
 
-  // удаление книги из каталога
   const deleteBook = (bookId) => {
     const newBooks = books.filter((book) => book.id !== bookId);
     setBooks(newBooks);
-    // убираем из корзины тоже
     const newCart = new Map(cart);
     newCart.delete(bookId);
     setCart(newCart);
 
-    // если удалили открытую книгу - закрываем детали
     if (selectedBook && selectedBook.id === bookId) {
       setSelectedBook(null);
     }
@@ -74,7 +68,6 @@ const App = () => {
     console.log("deleted book:", bookId);
   };
 
-  // подсчет общего количества книг в корзине
   const getTotalCartCount = () => {
     let total = 0;
     for (let count of cart.values()) {
@@ -83,7 +76,6 @@ const App = () => {
     return total;
   };
 
-  // открыть детали книги
   function openBookDetail(book) {
     setSelectedBook(book);
   }
@@ -107,19 +99,18 @@ const App = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-blue-50">
       <Header
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
         sortBy={sortBy}
         setSortBy={setSortBy}
-        totalBooks={books.length} // общее количество книг в каталоге
-        filteredBooks={filteredBooks.length} // найденные книги
+        totalBooks={books.length}
+        filteredBooks={filteredBooks.length}
         cartCount={getTotalCartCount()}
       />
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        {/* сетка книг */}
+      <main className="flex-1 max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredBooks.map((book) => (
             <BookCard
@@ -133,14 +124,15 @@ const App = () => {
           ))}
         </div>
 
-        {/* если ничего не найдено */}
         {filteredBooks.length === 0 && (
           <div className="text-center py-12">
             <span className="text-6xl text-gray-300 block mb-4">📚</span>
             <h3 className="text-lg font-medium text-gray-900 mb-2">
-              Ничего не найдено
+              Hech narsa topilmadi
             </h3>
-            <p className="text-gray-600">Попробуй другой поисковый запрос</p>
+            <p className="text-gray-600">
+              Boshqa qidiruv so‘rovini urinib ko‘ring
+            </p>
           </div>
         )}
       </main>
